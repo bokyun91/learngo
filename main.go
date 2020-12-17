@@ -51,6 +51,13 @@ func superAdd(numbers ...int) int {
 
 }
 
+func canIDrink(age int) bool {
+	if age < 18 {
+		return false
+	}
+	return true
+}
+
 // 대문자로 시작할 경우(함수, 변수) -> public
 func main() {
 	// 상수 const, 변수 var
@@ -73,4 +80,6 @@ func main() {
 
 	result := superAdd(1, 2, 3, 4, 5, 6)
 	fmt.Println(result)
+
+	fmt.Println(canIDrink(16))
 }
