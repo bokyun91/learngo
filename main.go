@@ -15,9 +15,24 @@ func lenAndUpper(name string) (int, string) {
 	return len(name), strings.ToUpper(name)
 }
 
-// 같은 타입의 arg를 여러 개 받을 경우 ...으로 받을 수 있음
+// 같은 타입의 arg여러 개 받을 경우 ...으로 받을 수 있음
 func repeatMe(words ...string) {
 	fmt.Println(words)
+}
+
+// naked return
+func lenAndUpper2(name string) (length int, uppercase string) {
+	length = len(name)
+	uppercase = strings.ToUpper(name)
+	return
+}
+
+// function 끝나고 또 다른 것 실행 시킴 defer -> return 후 실행
+func lenAndUpper3(name string) (length int, uppercase string) {
+	defer fmt.Println("I'm done")
+	length = len(name)
+	uppercase = strings.ToUpper(name)
+	return
 }
 
 // 대문자로 시작할 경우(함수, 변수) -> public
@@ -36,4 +51,7 @@ func main() {
 	fmt.Println(totalLength2)
 
 	repeatMe("nico", "lynn", "dal", "marl")
+
+	fmt.Println(lenAndUpper2("pbk"))
+	fmt.Println(lenAndUpper2("pbk"))
 }
