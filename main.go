@@ -52,10 +52,20 @@ func superAdd(numbers ...int) int {
 }
 
 func canIDrink(age int) bool {
-	if age < 18 {
+	// if 문에서 변수 생성 가능
+	// if koreanAge := age + 2; koreanAge < 18 {
+	// 	return false
+	// }
+	// return true
+
+	// switch 문에서도 변수 생성 가능
+	switch age {
+	case 10:
 		return false
+	case 18:
+		return true
 	}
-	return true
+	return false
 }
 
 // 대문자로 시작할 경우(함수, 변수) -> public
