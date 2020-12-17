@@ -35,6 +35,22 @@ func lenAndUpper3(name string) (length int, uppercase string) {
 	return
 }
 
+func superAdd(numbers ...int) int {
+	total := 0
+	// range : array에 Loop 사용할 수 있도록 해줌. index
+	for _, number := range numbers {
+		total += number
+	}
+
+	// 평소 쓰던 방식
+	// for i := 0; i < len(numbers); i++ {
+	// 	fmt.Println(numbers[i])
+	// }
+
+	return total
+
+}
+
 // 대문자로 시작할 경우(함수, 변수) -> public
 func main() {
 	// 상수 const, 변수 var
@@ -54,4 +70,7 @@ func main() {
 
 	fmt.Println(lenAndUpper2("pbk"))
 	fmt.Println(lenAndUpper2("pbk"))
+
+	result := superAdd(1, 2, 3, 4, 5, 6)
+	fmt.Println(result)
 }
